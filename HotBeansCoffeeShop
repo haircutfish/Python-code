@@ -1,0 +1,125 @@
+#Following NetworkChucks vids on Youtube I created this fake coffee shop called Hot Beans
+#NWC YNTLPRN series episode 1:https://www.youtube.com/watch?v=mRMmlo_Uqcs&list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp&index=1
+#NWC YNTLPRN series episode 2:https://www.youtube.com/watch?v=IXr0-J5XXMA&list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp&index=2
+#NWC YNTLPRN series episode 3:https://www.youtube.com/watch?v=T6OLDHAWjjA&list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp&index=3
+#NWC YNTLPRN series episode 4:https://www.youtube.com/watch?v=5-5Mf_L0UKw&list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp&index=4
+#NWC YNTLPRN series episode 5:https://www.youtube.com/watch?v=Ec9WQGw4lW0&list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp&index=5
+#NWC YNTLPRN series episode 6:https://www.youtube.com/watch?v=nD1REhS6e3Y&list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp&index=6
+
+#Let's start a coffee shop together !! We're  going to build a coffee shop using some new Python programming concepts!!
+
+import time
+
+#Build robot Barista!!
+
+print(""" __      __          ___                                          __             
+/\ \  __/\ \        /\_ \                                        /\ \__          
+\ \ \/\ \ \ \     __\//\ \     ___    ___     ___ ___      __    \ \ ,_\   ___   
+ \ \ \ \ \ \ \  /'__`\\\ \ \   /'___\ / __`\ /' __` __`\  /'__`\   \ \ \/  / __`\ 
+  \ \ \_/ \_\ \/\  __/ \_\ \_/\ \__//\ \L\ \/\ \/\ \/\ \/\  __/    \ \ \_/\ \L\ \
+  
+   \ `\___x___/\ \____\/\____\ \____\ \____/\ \_\ \_\ \_\ \____\    \ \__\ \____/
+    '\/__//__/  \/____/\/____/\/____/\/___/  \/_/\/_/\/_/\/____/     \/__/\/___/ 
+                                                                                 
+                                                                                 
+ __  __          __        ____                                                  
+/\ \/\ \        /\ \__    /\  _`\                                                
+\ \ \_\ \    ___\ \ ,_\   \ \ \L\ \     __     __      ___     ____              
+ \ \  _  \  / __`\ \ \/    \ \  _ <'  /'__`\ /'__`\  /' _ `\  /',__\             
+  \ \ \ \ \/\ \L\ \ \ \_    \ \ \L\ \/\  __//\ \L\.\_/\ \/\ \/\__, `\            
+   \ \_\ \_\ \____/\ \__\    \ \____/\ \____\ \__/.\_\ \_\ \_\/\____/            
+    \/_/\/_/\/___/  \/__/     \/___/  \/____/\/__/\/_/\/_/\/_/\/___/             
+                                                                                 
+                                                                                 """)
+
+print('\n\nHello, Welcome to Hot Beans!!!!!!!!!!!!!!!!!!')
+
+
+#Greet the customer
+
+customer_name = input('\nMay I have your name please?\n').lower()
+
+if customer_name == "ben" or customer_name == "patricia" or customer_name == "loki":
+  evil_status = input("Are you evil?\n").lower()
+  
+  if evil_status == "yes" and int(input("How many good deeds have you done today?\n")) <= 3:
+    print(f"\nYOU'RE NOT WELCOME HERE EVIL {customer_name.upper()}!!! GET OUT!!!!!!")
+    exit()
+ 
+  else:
+    print(f"\nYou are one of those rare non-evil {customer_name.title()}!!!  You're like a unicorn, rare and magestic!!! Welcome, Welcome, come on in!!!" )
+else:
+  print(f'Hello {customer_name.title()}, thank you so much for coming in today!!\n')
+
+#The menus
+
+drinks = """
+Coffee $1.50
+Latte $2.50
+Hot Chocolate $1.00
+Carmel Latte $2.50
+Flat White $2.00
+Irish Coffee $1.50"""
+
+#Ask the customer what they want to order
+
+print('\nHere is a menu, please look over it and let me know what I can make for you?\n',drinks)
+
+time.sleep(3)
+
+order = str(input("\nSo what can I make for you today?\n").lower())
+
+if order == "coffee":
+  input("Would you like cream and sugar?\n")
+  price = 1.50
+  
+elif order == "latte":
+  input("Would you like whipped cream?\n").lower()
+  if "yes":
+    price = 3.50  
+  else:  
+    price = 2.50
+elif order == "hot chocolate":
+  input("Would you like whipped cream?\n").lower()
+  if "yes":
+    price = 2.00
+  else:
+    price = 1.00
+elif order == "carmel latte":
+  input("Would you like whipped cream?\n").lower()
+  if "yes":
+    price =3.50
+  else:  
+    price = 2.50
+elif order == "flat white":
+  price = 2.00
+elif order == "irish coffee":
+  input("Would you like whipped cream?\n").lower()
+  if "yes":
+    price = 2.50
+  else:  
+    price = 1.50
+else:
+  print("I am sorry we do not have that here")
+  exit()
+
+amount = int(input(f"\nHow many {order}s would you like?\n"))
+
+print("\nSounds great, it will only be a couple minutes and I will have that ready for you!")
+
+
+#find the cost of the order
+
+cost = price * amount
+
+print(f"\nThe cost of your order is: ${cost}")
+
+#order up/responsed to customer 
+
+time.sleep(3)
+
+if amount > 1:
+  print(f"\nOrder for {customer_name.title()}, I have your {order}s ready!")
+
+else:
+  print(f"\nOrder for {customer_name.title()}, I have your {order} ready!")
