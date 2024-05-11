@@ -1,0 +1,2 @@
+# Python scripts
+This is a collection of different python scripts I have made.  They range from useful scripts for defanging an IP address and simple hash comparer, to games I coded from watching YouTube videos or attempting to create them from an 1980s computer programing book.  I hope you enjoy!!!
